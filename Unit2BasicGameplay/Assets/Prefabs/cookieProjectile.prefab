@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -9001182533039874268}
   - component: {fileID: 2235444900011725513}
   - component: {fileID: 5830915378971305492}
+  - component: {fileID: -5374442561729537509}
   m_Layer: 0
   m_Name: cookieProjectile
   m_TagString: Untagged
@@ -141,3 +142,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6124684, y: 0.16893253, z: 0.61388904}
   m_Center: {x: 0.006995827, y: 0.04237829, z: 0.0038221776}
+--- !u!114 &-5374442561729537509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081082174696920568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88471081fa3a61d459ed39ae87afb363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

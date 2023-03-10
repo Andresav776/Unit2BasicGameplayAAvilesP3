@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 3099114020960202909}
   - component: {fileID: 6652438022417599030}
   m_Layer: 0
-  m_Name: Animal_Moose_01 1
+  m_Name: LeftMoose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

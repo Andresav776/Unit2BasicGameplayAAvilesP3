@@ -8,12 +8,18 @@ public class SpawnManager : MonoBehaviour
     private float spawnRangeX = 20;
     private float spawnPosZ = 20;
     private float startDelay = 2;
-    private float spawnInterval = 1.5f;
+    private float spawnInterval = 2;
+
+    public float sideSpawnMaxZ;
+    public float sideSpawnMinZ;
+    public float sideSpawnX;
 
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
+        InvokeRepeating("SpawnLeftAnimal", startDelay, spawnInterval);
+        InvokeRepeating("SpawnRightAnimal", startDelay, spawnInterval);
     }
 
     // Update is called once per frame
@@ -23,12 +29,28 @@ public class SpawnManager : MonoBehaviour
     }
 
     void SpawnRandomAnimal()
-        {
-            //Randomly generates animalIndex and spawn position
-            Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
+    {
+        //Randomly generates animalIndex and spawn position
+        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
 
-            int animalIndex = Random.Range(0, animalPrefabs.Length);
+        int animalIndex = Random.Range(0, animalPrefabs.Length);
 
-            Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
-        }
+        Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
+    }
+
+    void SpawnLeftAnimal()
+    {
+        int animalIndex = Random.Range(0, animalPrefabs.Length);
+        Vector3 spawnPos = new Vector3(-sideSpawnX, 0, Random.Range(sideSpawnMinZ, sideSpawnMaxZ));
+        Vector3 rotation = new Vector3(0, 90, 0);
+        Instantiate(animalPrefabs[animalIndex], spawnPos, Quaternion.Euler(rotation));
+    }
+
+    void SpawnRightAnimal()
+    {
+        int animalIndex = Random.Range(0, animalPrefabs.Length);
+        Vector3 spawnPos = new Vector3(sideSpawnX, 0, Random.Range(sideSpawnMinZ, sideSpawnMaxZ));
+        Vector3 rotation = new Vector3(0, -90, 0);
+        Instantiate(animalPrefabs[animalIndex], spawnPos, Quaternion.Euler(rotation));
+    }
 }
