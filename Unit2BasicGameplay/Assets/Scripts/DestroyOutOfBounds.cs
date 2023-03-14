@@ -35,7 +35,7 @@ public class DestroyOutOfBounds : MonoBehaviour
             Destroy(gameObject);
         }
 
-        else if (transform.position.z < -sideBound)
+        else if (transform.position.x < -sideBound)
         {
             gameManager.AddLives(-1);
             Destroy(gameObject);
